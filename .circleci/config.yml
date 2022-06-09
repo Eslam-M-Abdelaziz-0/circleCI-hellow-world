@@ -19,14 +19,6 @@ jobs:
           name: 'Say world'
           command: 'echo World '
 
-  print-my-env-var:
-    docker:
-      - image: circleci/node:13.8.0
-    steps:
-      run:
-        name: 'print environment name variable'
-        command: echo $NAME
-
 workflows:
   say-hello-workflow:
     jobs:
@@ -34,4 +26,3 @@ workflows:
       - print-world:
           requires:
             - print-hello
-      - print-my-env-var
