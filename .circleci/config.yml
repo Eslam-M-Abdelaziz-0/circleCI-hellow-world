@@ -13,11 +13,13 @@ jobs:
   print-world:
     docker:
       - image: circleci/node:13.8.0
+    requires:
+      - print-hello
     steps:
       - checkout
       - run:
-          name: 'Say hello'
-          command: 'echo World'
+          name: 'Say world'
+          command: 'echo World '
 
 workflows:
   say-hello-workflow:
