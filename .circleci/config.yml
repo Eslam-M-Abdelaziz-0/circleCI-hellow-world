@@ -2,21 +2,20 @@ version: 2.1
 
 commands:
   sayhello:
-    description: "A very simple command for demonstration purposes"
+    description: 'A very simple command for demonstration purposes'
     parameters:
       to:
         type: string
-        default: "Hello in workflow is : "
+        default: 'Hello in workflow is : '
     steps:
       - run: echo << parameters.to << $CIRCLE_WORKFLOW_ID >>
-
 
 jobs:
   print_pipeline_id:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: 
+      - run:
           - sayhello
 
   save_hello_world_output:
@@ -55,7 +54,7 @@ workflows:
   say-hello-workflow:
     jobs:
       - print_pipeline_id
-      - save_hello_world_output
+      - save_hello_world_output:
           requires:
             - print_pipeline_id
       - print-hello-world:
