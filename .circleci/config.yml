@@ -4,7 +4,7 @@ commands:
   sayhello:
     description: 'A very simple command for demonstration purposes'
     parameters:
-      to:
+      to: 
         type: string
         default: 'Hello in workflow is : '
     steps:
