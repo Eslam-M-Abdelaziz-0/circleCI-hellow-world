@@ -29,6 +29,7 @@ jobs:
       - run: |
           if [[ `cat /tmp/workspace/output.txt` == "Hello World" ]]; then
             echo "It worked!";
+            cat cat /tmp/workspace/output.txt
           else
             echo "Nope!"; exit 1
           fi
